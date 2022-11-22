@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="en">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Калькулятор</h1>
+    <form method="post" action="/calc">
+        <input id="variable" name="variable" type="number" step="any" placeholder="Первое число">
+
+        <select name="operation" id="operation">
+            <option value="+" selected> + </option>
+            <option value="-"> - </option>
+            <option value="*"> * </option>
+            <option value="/"> / </option>
+        </select>
+
+        <input id="variable2" name="variable2" type="number" step="any" placeholder="Второе число">
+        <input type="submit" name="submit" value="Отправить с помощью post">
+
+    </form>
+
+    <form method="get" action="/calc">
+        <input id="variable_1" name="variable" type="number" step="any" placeholder="Первое число">
+
+        <select name="operation" id="operation_">
+            <option value="+" selected> + </option>
+            <option value="-"> - </option>
+            <option value="*"> * </option>
+            <option value="/"> / </option>
+        </select>
+
+        <input id="variable_2" name="variable2" type="number" step="any" placeholder="Второе число">
+        <input type="submit" name="submit" value="Отправить c помощью get">
+    </form>
+
+    <hr>
+    <p th:text="${first} +' '+ ${operation}+' '+ ${second} +' = ' + ${answer}"></p>
+
+    <br>
+</body>
+</html>
